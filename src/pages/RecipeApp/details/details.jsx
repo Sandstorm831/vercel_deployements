@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { GlobalContext } from "../../../context/recipe_app_context/index"
 import '../../../output.css'
 
-export default function Details(){
+export default function RecipeAppDetails(){
 
     const {recipeDetailsData, setRecipeDetailsData, handleAddtoFavourites, favouritesList} = useContext(GlobalContext)
     const {id} = useParams()

@@ -7,9 +7,12 @@ import LearningReactApp from './pages/learning_react/index.jsx'
 import Game from './pages/TicTacToeGame/App.jsx'
 import WeatherApp from './components/weather_app_components/weather/index.jsx'
 import RecipeApp from './pages/RecipeApp/App.jsx';
-import Home from './pages/RecipeApp/home/index.jsx';
-import Favourites from './pages/RecipeApp/favourites/favourites.jsx';
-import Details from './pages/RecipeApp/details/details.jsx';
+import RecipeAppHome from './pages/RecipeApp/home/index.jsx';
+import RecipeAppFavourites from './pages/RecipeApp/favourites/favourites.jsx';
+import RecipeAppDetails from './pages/RecipeApp/details/details.jsx';
+import ShoppingCartApp from './pages/shoppingCart/App.jsx';
+import ShoppingCartHome from './pages/shoppingCart/home.jsx';
+import ShoppingCartCart from './pages/shoppingCart/cart.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,9 +23,13 @@ createRoot(document.getElementById('root')).render(
         <Route path='/tictactoe' element={<Game />} />
         <Route path='/weatherapp' element={<WeatherApp />} />
         <Route path='/recipeapp' element={<RecipeApp />} >
-          <Route index element={<Home />} />
-          <Route path='favourites' element={<Favourites />} />
-          <Route path='recipe-item/:id' element={<Details />} /> 
+          <Route index element={<RecipeAppHome />} />
+          <Route path='favourites' element={<RecipeAppFavourites />} />
+          <Route path='recipe-item/:id' element={<RecipeAppDetails />} /> 
+        </Route>
+        <Route path='/shoppingcart' element={<ShoppingCartApp />} >
+          <Route index element={<ShoppingCartHome />} />
+          <Route path='cart' element={<ShoppingCartCart />} />
         </Route>
       </Routes>
     </BrowserRouter>

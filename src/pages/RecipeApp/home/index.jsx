@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { GlobalContext } from "../../../context/recipe_app_context/index"
 import RecipeItem from "../../../components/recipe_app_components/recipe_item/index"
 
-export default function Home(){
+export default function RecipeAppHome(){
 
     const {recipeList, loading} = useContext(GlobalContext)
 
