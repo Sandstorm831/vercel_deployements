@@ -13,6 +13,7 @@ import RecipeAppDetails from './pages/RecipeApp/details/details.jsx';
 import ShoppingCartApp from './pages/shoppingCart/App.jsx';
 import ShoppingCartHome from './pages/shoppingCart/home.jsx';
 import ShoppingCartCart from './pages/shoppingCart/cart.jsx';
+import ToDoApp from './pages/ToDoApp/App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<ShoppingCartHome />} />
           <Route path='cart' element={<ShoppingCartCart />} />
         </Route>
+        <Route path='/todoapp' element={<ToDoApp />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
