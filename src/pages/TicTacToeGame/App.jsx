@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./styles.css"
-
+import "../../output.css"
 function Square(prop){
   return (
-    <button onClick={prop.onSquareClick} className="square">{prop.index}</button>
+    <button onClick={prop.onSquareClick} className="bg-white border border-[#999999] flex justify-center text-[28px] font-bold w-12 h-12"><div className="flex flex-col justify-center">{prop.index}</div></button>
   );
 }
 
@@ -38,13 +37,13 @@ function Board(prop){
   }
 
   let elem = [];
-  elem.push(<p className="status">{status}</p>);
+  elem.push(<p className="mb-[10px]">{status}</p>);
   for (let j=0; j<3; j++){
     let inner_elem=[];
     for(let i=0; i<3; i++){
       inner_elem.push(<Square index = {prop.table[3*j + i]} onSquareClick = {() => {handleClick(3*j + i)}} />);
     }
-    elem.push(<div className="board-row">{inner_elem}</div>);
+    elem.push(<div className="flex">{inner_elem}</div>);
   }
 
   return elem;
@@ -100,7 +99,7 @@ export default function Game(){
     }
     return (
       <li key={ind}>
-        <button onClick={() => jumpTo(ind)}>{description}</button>
+        <button className="border border-[#999999] rounded-lg p-1 m-1" onClick={() => jumpTo(ind)}>{description}</button>
       </li>
     )
   });
@@ -114,8 +113,8 @@ export default function Game(){
   console.log(gameState)
 
   return (
-    <div className="game">
-      <div className="game-board">
+    <div className="m-5">
+      <div>
         <Board onClick = {gameClick} table = {currTable} nxtSymbol = {nxtSymbol}/>
       </div>
       <div className="game-info">

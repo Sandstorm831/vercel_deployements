@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import App from './App.jsx'
-import './index.css';
+// import './index.css';
 import LearningReactApp from './pages/learning_react/index.jsx'
 import Game from './pages/TicTacToeGame/App.jsx'
 import WeatherApp from './components/weather_app_components/weather/index.jsx'
