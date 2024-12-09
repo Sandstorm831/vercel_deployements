@@ -59,7 +59,7 @@ export function CreateToDo({ clicker, setClicker }) {
               description: description,
             });
             try {
-              fetch("http://localhost:3000/todo", {
+              fetch("https://backend-deployements.vercel.app/todo", {
                 method: "POST",
                 body: payload,
                 headers: {

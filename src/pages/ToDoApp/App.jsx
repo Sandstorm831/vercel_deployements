@@ -15,7 +15,7 @@ function ToDoApp() {
    */
   useEffect(() => {
     const contactBackend = () => {
-      fetch("http://localhost:3000/todos")
+      fetch("https://backend-deployements.vercel.app/todos")
         .then((res) => {
           return res.json();
         })

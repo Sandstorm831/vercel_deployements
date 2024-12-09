@@ -24,7 +24,7 @@ export function Todos({ todos, clicker, setClicker }) {
                 className=" bg-[#fff7ec] h-[25px] w-[25px] "
                 onClick={() => {
                   try {
-                    fetch("http://localhost:3000/completed", {
+                    fetch("https://backend-deployements.vercel.app/completed", {
                       method: "PUT",
                       body: JSON.stringify({
                         id: item._id,
@@ -68,7 +68,7 @@ export function Todos({ todos, clicker, setClicker }) {
                 onClick={async () => {
                   try {
                     const response = await fetch(
-                      "http://localhost:3000/delete",
+                      "https://backend-deployements.vercel.app/delete",
                       {
                         method: "DELETE",
                         body: JSON.stringify({
