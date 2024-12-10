@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import App from './App.jsx'
-// import './index.css';
 import LearningReactApp from './pages/learning_react/index.jsx'
 import Game from './pages/TicTacToeGame/App.jsx'
 import WeatherApp from './components/weather_app_components/weather/index.jsx'
@@ -15,6 +14,7 @@ import ShoppingCartHome from './pages/shoppingCart/home.jsx';
 import ShoppingCartCart from './pages/shoppingCart/cart.jsx';
 import ToDoApp from './pages/ToDoApp/App.jsx';
 import CoalitionApp from './pages/coalitionProject/App.jsx'
+import BusinessCardApp from './pages/businessCards/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -35,6 +35,7 @@ createRoot(document.getElementById('root')).render(
         </Route>
         <Route path='/todoapp' element={<ToDoApp />} />
         <Route path='/coalitionproject' element={<CoalitionApp />} />
+        <Route path='/businesscardapp' element={<BusinessCardApp />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

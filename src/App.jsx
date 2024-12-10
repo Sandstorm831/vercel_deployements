@@ -8,6 +8,8 @@ function App() {
     "https://github.com/Sandstorm831/Learning-react/tree/main/weather-app",
     "https://github.com/Sandstorm831/Learning-react/tree/main/learning",
     "https://github.com/Sandstorm831/Learning-react/tree/main/shopping_cart",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/coalition_project",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/businessCards",
   ];
   const live_demo_links = [
     "/todoapp",
@@ -15,6 +17,8 @@ function App() {
     "/weatherapp",
     "/learningreact",
     "/shoppingcart",
+    "/coalitionproject",
+    "/businesscardapp",
   ];
   const sources = [
     "/static/images/todo_fullstack1.png",
@@ -22,6 +26,8 @@ function App() {
     "/static/images/weatherApp2.png",
     "static/images/learningReact.png",
     "static/images/shoppingCart.png",
+    "/static/images/coalitionProject.png",
+    "/static/images/skullCard.png",
   ];
   const titles = [
     "To-Do Applicatoin",
@@ -29,13 +35,17 @@ function App() {
     "Weather Web Application",
     "Custom React Components",
     "Shopping Web Application",
+    "Coalition CSS Project",
+    "Business Card Application"
   ];
   const descriptions = [
     "This is a simple To-Do app where users can create tasks, mark them as done, and delete them.",
     "Recipe App is a web application that offers a wide variety of recipes for different dishes. Simply enter an ingredient, and the app will display recipes that include it. You can then view detailed recipe instructions, save your favorites for later, and access all your saved recipes on the Favorites page.",
     "Weather App is a user-friendly web application that provides real-time weather information for any city worldwide. To enhance performance, I implemented a debouncer and an API aborter to handle requests efficiently. Additionally, I included a sleek loading animation to improve the overall user experience.",
     "These projects are my initial React learning journey, featuring around 18 custom components inspired by common website elements like scroll-indicators, accordions, image-sliders and more. Each project is minimally styled but fully functional with all necessary features and interactivity.",
-    "This a minimal shopping cart, here you can find the products, include them in your cart. All the products you have included in cart will be shown in the Cart page and the total price will also be displayed there. This project uses Recoil library for state management instead of Context API",
+    "This a minimal shopping cart, here you can find the products, include them in your cart. All the products you have included in cart will be shown in the Cart page and the total price will also be displayed there. This project uses Recoil library for state management instead of Context API.",
+    "This is a CSS-intensive project that I completed as an assignment for a company called Coalition. The task was to precisely replicate a given webpage, and this is the final result. I used ChartJS for the graph and TailwindCSS for styling. Functionality was not included, as it was not required for the assignment.",
+    "This is my first project in the direction of learning serious CSS and styling skills. In this project, each card have an embedded animation. On hovering on any of card, the title of card moves up, and a description about the card holder and it's social media handles appears in smooth transition, and disappears smoothly on hovering out.",
   ];
   let counter = 0;
   const divArray = [];
