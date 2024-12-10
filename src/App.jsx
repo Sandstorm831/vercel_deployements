@@ -1,6 +1,68 @@
+import { useNavigate } from "react-router";
 import "./output.css";
 
 function App() {
+  const github_links = [
+    "https://github.com/Sandstorm831/learning-backend/tree/main/toDoApp",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/recipie-app",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/weather-app",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/learning",
+    "https://github.com/Sandstorm831/Learning-react/tree/main/shopping_cart",
+  ];
+  const live_demo_links = [
+    "/todoapp",
+    "/recipeapp",
+    "/weatherapp",
+    "/learningreact",
+    "/shoppingcart",
+  ];
+  const sources = [
+    "/static/images/todo_fullstack1.png",
+    "/static/images/recipe_app2.png",
+    "/static/images/weatherApp2.png",
+    "static/images/learningReact.png",
+    "static/images/shoppingCart.png",
+  ];
+  const titles = [
+    "To-Do Applicatoin",
+    "Recipe Web Applicatoin",
+    "Weather Web Application",
+    "Custom React Components",
+    "Shopping Web Application",
+  ];
+  const descriptions = [
+    "This is a simple To-Do app where users can create tasks, mark them as done, and delete them.",
+    "Recipe App is a web application that offers a wide variety of recipes for different dishes. Simply enter an ingredient, and the app will display recipes that include it. You can then view detailed recipe instructions, save your favorites for later, and access all your saved recipes on the Favorites page.",
+    "Weather App is a user-friendly web application that provides real-time weather information for any city worldwide. To enhance performance, I implemented a debouncer and an API aborter to handle requests efficiently. Additionally, I included a sleek loading animation to improve the overall user experience.",
+    "These projects are my initial React learning journey, featuring around 18 custom components inspired by common website elements like scroll-indicators, accordions, image-sliders and more. Each project is minimally styled but fully functional with all necessary features and interactivity.",
+    "This a minimal shopping cart, here you can find the products, include them in your cart. All the products you have included in cart will be shown in the Cart page and the total price will also be displayed there. This project uses Recoil library for state management instead of Context API",
+  ];
+  let counter = 0;
+  const divArray = [];
+  for (let i = 0; i < titles.length; i++) {
+    if (counter % 2 === 0) {
+      divArray.push(
+        <LeftDiv
+          Title={titles[i]}
+          Source={sources[i]}
+          Description={descriptions[i]}
+          github_link={github_links[i]}
+          live_demo_link={live_demo_links[i]}
+        />
+      );
+    } else {
+      divArray.push(
+        <RightDiv
+          Title={titles[i]}
+          Source={sources[i]}
+          Description={descriptions[i]}
+          github_link={github_links[i]}
+          live_demo_link={live_demo_links[i]}
+        />
+      );
+    }
+    counter += 1;
+  }
   return (
     <div className="bg-black flex flex-col h-max font-pixelated">
       <div className="text-white flex justify-center mb-8 text-[150px] ">
@@ -8,44 +70,7 @@ function App() {
       </div>
       <div className="w-full flex justify-center px-8 pb-8">
         <div className="flex justify-center flex-wrap  w-full">
-          <LeftDiv
-            Source={"/static/images/todo_fullstack1.png"}
-            Title={"To-Do Applicatoin"}
-            Description={
-              "This is a simple To-Do app where users can create tasks, mark them as done, and delete them."
-            }
-            github_link={
-              "https://github.com/Sandstorm831/learning-backend/tree/main/toDoApp"
-            }
-            live_demo_link={"https://portfoliodeployements.vercel.app/todoapp"}
-          />
-
-          <RightDiv
-            Source={"/static/images/recipe_app2.png"}
-            Title={"Recipe Web Applicatoin"}
-            Description={
-              "Recipe App is a web application that offers a wide variety of recipes for different dishes. Simply enter an ingredient, and the app will display recipes that include it. You can then view detailed recipe instructions, save your favorites for later, and access all your saved recipes on the Favorites page."
-            }
-            github_link={
-              "https://github.com/Sandstorm831/Learning-react/tree/main/recipie-app"
-            }
-            live_demo_link={
-              "https://portfoliodeployements.vercel.app/recipeapp"
-            }
-          />
-          <LeftDiv
-            Source={"/static/images/weatherApp2.png"}
-            Title={"Weather Web Application"}
-            Description={
-              "Weather App is a user-friendly web application that provides real-time weather information for any city worldwide. To enhance performance, I implemented a debouncer and an API aborter to handle requests efficiently. Additionally, I included a sleek loading animation to improve the overall user experience."
-            }
-            github_link={
-              "https://github.com/Sandstorm831/Learning-react/tree/main/weather-app"
-            }
-            live_demo_link={
-              "https://portfoliodeployements.vercel.app/weatherapp"
-            }
-          />
+          {divArray && divArray.length ? divArray.map((elem) => elem) : null}
         </div>
       </div>
     </div>
@@ -55,6 +80,7 @@ function App() {
 export default App;
 
 function LeftDiv({ Source, Title, Description, github_link, live_demo_link }) {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-start w-full mt-8 font-pixelated">
       <div className="flex max-xl:flex-col max-xl:w-full xl:w-11/12 justify-start border-r-8 border-t-[#EAF2EF] border-r-[#EAF2EF] rounded-lg bg-[#EAF2EF] text-[#212121]">
@@ -80,14 +106,12 @@ function LeftDiv({ Source, Title, Description, github_link, live_demo_link }) {
               >
                 <div className="flex justify-center">GitHub Repo</div>
               </a>
-              <a
-                href={live_demo_link}
-                className="text-[#212121] mx-2 mb-2 text-3xl w-36 h-16 rounded-lg shadow-md flex flex-col justify-center shadow-[#104F55]"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                onClick={() => navigate(live_demo_link)}
+                className="text-[#212121] mx-2 mb-2 text-3xl w-36 h-16 rounded-lg shadow-md flex flex-col justify-center shadow-[#104F55] cursor-pointer"
               >
                 <div className="flex justify-center">Live Demo</div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -97,6 +121,8 @@ function LeftDiv({ Source, Title, Description, github_link, live_demo_link }) {
 }
 
 function RightDiv({ Source, Title, Description, github_link, live_demo_link }) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex justify-end w-full mt-8 font-pixelated">
       <div className="flex max-xl:flex-col max-xl:w-full xl:w-11/12 justify-end w-11/12 bg-[#E6DB74] border-[#E6DB74] border-l-8 border-l-[#E6DB74] rounded-lg ">
@@ -115,14 +141,12 @@ function RightDiv({ Source, Title, Description, github_link, live_demo_link }) {
               >
                 <div className="flex justify-center">GitHub Repo</div>
               </a>
-              <a
-                href={live_demo_link}
-                className="text-[#212121] mx-2 mb-2 text-3xl w-36 h-16 rounded-lg shadow-md flex flex-col justify-center shadow-[#104F55]"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                onClick={() => navigate(live_demo_link)}
+                className="text-[#212121] mx-2 mb-2 text-3xl w-36 h-16 rounded-lg shadow-md flex flex-col justify-center shadow-[#104F55] cursor-pointer"
               >
                 <div className="flex justify-center">Live Demo</div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
