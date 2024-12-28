@@ -1,8 +1,4 @@
-# React + Vite
+# Vercel Deployements
+This project is to create a mother project, and host all my learning journey projects on different routes. This repository is structured very differently from all original projects that are initially made. I have made this mother project just to hold all my projects on the same domain and there will be no need for creating several different deployements for my several small learning level project.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[*View original project repository*](https://github.com/Sandstorm831/Learning-react)
